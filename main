@@ -1,0 +1,51 @@
+#!/bin/bash
+
+
+export LPTOOL_DIR="/home/lpelegrin/.lptools"
+
+
+# ===========================================
+# ALIAS list
+# ===========================================
+# System
+alias ll="ls -lhaF"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias install="sudo apt install -y"
+alias update="sudo apt update"
+alias upgrade="sudo apt update && sudo apt --only-upgrade install"
+alias delete="sudo apt purge --auto-remove"
+
+#Webfleet
+alias webfleet="cd /mnt/c/Users/pelegrin/Documents/WebfleetProjects"
+
+# Kubernetes
+alias kk="kubectl"
+
+# Docker
+alias dk="docker"
+alias dk-start-all='docker start $(docker ps -aq)'
+alias dk-stop-all='docker stop $(docker ps -aq)'
+alias dk-clean='docker system prune -a'
+alias dk-purge='docker stop $(docker ps -aq) && docker system prune --volumes -a '
+
+# Ansible
+alias ansible="source $LPTOOL_DIR/.venv/bin/activate && ansible"
+
+# ===========================================
+# BIN directory
+# ===========================================
+chmod -R +x $LPTOOL_DIR/bin/
+export PATH="$PATH:$LPTOOL_DIR/bin"
+
+
+# ===========================================
+# SCRIPTS directory
+# ===========================================
+chmod -R +x $LPTOOL_DIR/scripts/
+
+
+
+# INITIALIZATION ============================
+$LPTOOL_DIR/scripts/init.sh
