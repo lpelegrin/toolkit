@@ -27,6 +27,7 @@ alias kk-exec='f(){ kubectl exec --stdin --tty $1 -- /bin/bash; }; f'
 
 # Docker
 alias dk="docker"
+alias dk-get-tags='f(){ curl -L -s "https://$1/v2/$2/tags/list"; }; f'
 alias dk-start-all='docker start $(docker ps -aq)'
 alias dk-stop-all='docker stop $(docker ps -aq)'
 alias dk-clean='docker system prune -a'
