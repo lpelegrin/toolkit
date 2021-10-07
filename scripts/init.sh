@@ -17,12 +17,3 @@ if IsNotInstalled python3; then
 	sudo apt install -y python3.8
 fi
 
-#
-# Create a local .venv environment for lptools
-#
-if [ ! -d "$TOOLKIT_DIR/.venv" ]; then
-	CheckInstall python3.8-venv
-	python3 -m venv $TOOLKIT_DIR/.venv
-	pip3 install --upgrade pip
-fi
-

@@ -58,6 +58,17 @@ if IsNotInstalled azure-cli; then
 	sudo apt install -y azure-cli
 fi
 
+
+#
+# Create a local .venv environment for toolkit
+#
+if [ ! -d "$TOOLKIT_DIR/.venv" ]; then
+	CheckInstall python3.8-venv
+	python3 -m venv $TOOLKIT_DIR/.venv
+	pip3 install --upgrade pip
+fi
+
+
 #
 # Install Ansible
 #
