@@ -23,7 +23,7 @@ alias webfleet="cd /mnt/c/Users/pelegrin/Documents/WebfleetProjects"
 # Kubernetes
 alias kk="kubectl"
 alias kk-setns='f(){ kubectl config set-context --current --namespace=$1; }; f'
-alias kk-exec='f(){ kubectl exec --stdin --tty @1 -- /bin/bash; }; f'
+alias kk-exec='f(){ kubectl exec --stdin --tty $1 -- /bin/bash; }; f'
 
 # Docker
 alias dk="docker"
