@@ -21,9 +21,10 @@ alias delete="sudo apt purge --auto-remove"
 alias webfleet="cd /mnt/c/Users/pelegrin/Documents/WebfleetProjects"
 
 # Kubernetes
-alias kk="kubectl"
-alias kk-setns='f(){ kubectl config set-context --current --namespace=$1; }; f'
-alias kk-exec='f(){ kubectl exec --stdin --tty $1 -- /bin/bash; }; f'
+alias k="kubectl"
+alias kpods='kubectl get pods'
+alias ksetns='f(){ kubectl config set-context --current --namespace=$1; }; f'
+alias kexec='f(){ kubectl exec --stdin --tty $1 -- /bin/bash; }; f'
 
 # Docker
 alias dk="docker"
