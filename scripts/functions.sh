@@ -28,7 +28,7 @@ function IsNotInstalled() {
 }
 
 CheckPipInstall() {
-	source $LPTOOL_DIR/.venv/bin/activate
+	source $TOOLKIT_DIR/.venv/bin/activate
 	pkg=$1
 	status="$(pip3 show $pkg 2>&1)"
 	if [ ! $? = 0 ] || [ ! "$status" = installed ]; then

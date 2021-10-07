@@ -1,7 +1,7 @@
 #!/bin/bash
 
-
-export LPTOOL_DIR="/home/lpelegrin/.lptools"
+# To add the toolkit add the follwing line in your .bashrc file
+# export TOOLKIT_DIR="" && source $TOOLKIT_DIR/main
 
 
 # ===========================================
@@ -22,6 +22,8 @@ alias webfleet="cd /mnt/c/Users/pelegrin/Documents/WebfleetProjects"
 
 # Kubernetes
 alias kk="kubectl"
+alias kk-setns="f(){ kubectl config set-context --current --namespace="$@"; }; f"
+alias kk-exec='f(){ kubectl exec --stdin --tty "$@" -- /bin/bash; }; f'
 
 # Docker
 alias dk="docker"
@@ -31,21 +33,19 @@ alias dk-clean='docker system prune -a'
 alias dk-purge='docker stop $(docker ps -aq) && docker system prune --volumes -a '
 
 # Ansible
-alias ansible="source $LPTOOL_DIR/.venv/bin/activate && ansible"
+alias ansible="source $TOOLKIT_DIR/.venv/bin/activate && ansible"
 
 # ===========================================
 # BIN directory
 # ===========================================
-chmod -R +x $LPTOOL_DIR/bin/
-export PATH="$PATH:$LPTOOL_DIR/bin"
+chmod -R +x $TOOLKIT_DIR/bin/
+export PATH="$PATH:$TOOLKIT_DIR/bin"
 
 
 # ===========================================
 # SCRIPTS directory
 # ===========================================
-chmod -R +x $LPTOOL_DIR/scripts/
-
-
+chmod -R +x $TOOLKIT_DIR/scripts/
 
 # INITIALIZATION ============================
-$LPTOOL_DIR/scripts/init.sh
+$TOOLKIT_DIR/scripts/init.sh

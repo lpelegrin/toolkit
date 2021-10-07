@@ -1,8 +1,7 @@
 #!/bin/bash
 
-source $LPTOOL_DIR/scripts/functions.sh
+source $TOOLKIT_DIR/scripts/functions.sh
 
-CheckInstall git
 CheckInstall vim
 
 #
