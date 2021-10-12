@@ -17,6 +17,9 @@ alias update="sudo apt update"
 alias upgrade="sudo apt update && sudo apt --only-upgrade install"
 alias delete="sudo apt purge --auto-remove"
 
+# Helpfull
+alias dtargz='f(){ tar -xzf $1; }; f'
+
 #Webfleet
 alias webfleet="cd /mnt/c/Users/pelegrin/Documents/WebfleetProjects"
 
